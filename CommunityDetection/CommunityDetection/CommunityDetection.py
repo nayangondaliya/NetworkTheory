@@ -91,12 +91,15 @@ def getCommunityValue(clusters, graph, vertices):
 
     ####NOTE: ADJUST DECIMAL POINTS AS PER REQUIREMENT####
     f_h_edges = round(fc_Edges / halfEdges, 3)
-    f_t_edges = round(pow(fc_Vertices, 2) / pow(totalEdges, 2), 3)
+    f_t_edges = round(pow(fc_Vertices, 2) / pow(totalEdges, 2), 2)
+    #f_t_edges = round(pow(fc_Vertices, 2) / pow(totalEdges, 2), 3) SLIDE TESTING
 
     s_h_edges = round(sc_Edges / halfEdges, 3)
-    s_t_edges = round(pow(sc_Vertices, 2) / pow(totalEdges, 2), 3)
+    s_t_edges = round(pow(sc_Vertices, 2) / pow(totalEdges, 2), 2)
+    #s_t_edges = round(pow(sc_Vertices, 2) / pow(totalEdges, 2), 3) SLIDE TESTING
 
-    result = round((f_h_edges - f_t_edges) + (s_h_edges - s_t_edges), 3)
+    result = round((f_h_edges - f_t_edges) + (s_h_edges - s_t_edges), 2)
+    #result = round((f_h_edges - f_t_edges) + (s_h_edges - s_t_edges), 3) SLIDE TESTING
 
     #print(f'Community value is: {result}')
 
@@ -149,19 +152,21 @@ def performOptimiseQ(iteration, initialCluster, graph, vertices):
 vertices = ['a','b','c','d','e','f','g','h','i','j','k']
 
 ##################################################################
+#slide
 
-totalVertices = 11
-graph = generateMatrix("slide.txt", vertices, totalVertices)
+#totalVertices = 11
+#graph = generateMatrix("slide.txt", vertices, totalVertices)
 #clusters = [["a","b","c","d","e","f"],["g","h","i","j","k"]]
 #clusters = [["a","b","d","e"],["c","f","g","h","i","j","k"]]
 #clusters = [["a","b","f","g","j"],["c","d","e","h","i","k"]]
 #print(getCommunityValue(cluster, graph, vertices[0:totalVertices]))
 
 #optimiseQ
-totalIteration = 3
-print(performOptimiseQ(totalIteration, ["a","d","f","h","j"], graph, vertices[0:totalVertices]))
+#totalIteration = 3
+#print(performOptimiseQ(totalIteration, ["a","d","f","h","j"], graph, vertices[0:totalVertices]))
 
 ##################################################################
+#assignment
 
 #totalVertices = 8
 #graph = generateMatrix("graph.txt", vertices, totalVertices)
@@ -174,7 +179,19 @@ print(performOptimiseQ(totalIteration, ["a","d","f","h","j"], graph, vertices[0:
 #print(performOptimiseQ(totalIteration, ["e","f","h"], graph, vertices[0:totalVertices]))
 
 ##################################################################
+#pratham
 
+totalVertices = 8
+graph = generateMatrix("pratham-g.txt", vertices, totalVertices)
+#clusters = [["a","b","e","f"],["c","d","g","h"]]
+#clusters = [["a","b","c","e"],["d","f","g","h"]]
+#print(getCommunityValue(clusters, graph, vertices[0:totalVertices]))
+
+#optimiseQ
+totalIteration = 1
+print(performOptimiseQ(totalIteration, ["e","f","g"], graph, vertices[0:totalVertices]))
+
+##################################################################
 #for ind, val in enumerate(clusters):
 #    print(f'Total edges between cluster {ind + 1} is: {getClusterTotalEdges(val, graph, vertices)}')
 #    print(f'Total vertices in cluster {ind + 1} is: {getClusterVertices(val, graph, vertices)}')

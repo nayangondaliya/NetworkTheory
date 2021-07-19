@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "StructuralBalanceCompleteGraph", "StructuralBalanceCompleteGraph\StructuralBalanceCompleteGraph.pyproj", "{D98E4592-2B2C-4ABF-A324-E026866B4531}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D98E4592-2B2C-4ABF-A324-E026866B4531}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D98E4592-2B2C-4ABF-A324-E026866B4531}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E93F25EB-8D5B-4426-AB4B-59877DDB7BC5}
+	EndGlobalSection
+EndGlobal

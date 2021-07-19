@@ -1,0 +1,6 @@
+a = b, e
+b = f
+c = d, f, g, h
+d = h
+e = f
+g = h

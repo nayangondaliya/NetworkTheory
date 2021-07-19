@@ -89,7 +89,7 @@ def getMatrix(row, column, initialiser):
         matrix.append(row)
     return matrix
 
-#read file and generate adjacency matrix with STCP
+#read file and generate adjacency matrix
 def getAdjacencyMatrix(fileName, vertices, totalVertices):
     matrix = getMatrix(totalVertices, totalVertices, 0)
     file = open(fileName,"r")
