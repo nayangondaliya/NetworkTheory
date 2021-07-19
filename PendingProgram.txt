@@ -1,0 +1,14 @@
+A1:
+Adjacency matrix
+SCC
+Proof
+
+A2:
+Centrality Measures
+
+A3:
+Bridges and local bridges
+Betweenness 2 (0.7)
+
+A4:
+Completed

@@ -1,0 +1,11 @@
+a={b:s}, {c:s}, {e:s}, {f:w}
+b={f:s}, {c:s}
+c={f:s}, {g:w}, {h:w}
+d={h:s}
+e={f:w}, {i:s}
+f={g:s}, {i:s}, {j:w}, {k:w}
+g={h:s}, {k:s}
+h={k:s}, {l:s}
+i={j:w}
+j={k:w}
+k={l:w}

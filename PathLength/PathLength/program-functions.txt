@@ -1,0 +1,63 @@
+#matrix = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+#          [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+#          [0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+#          [0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+#          [1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+#          [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+#          [0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+#          [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1],
+#          [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+#          [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+#          [0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0],
+#          [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]]
+
+#crossMatrix = [x[:] for x in matrix]
+#temp_result = [x[:] for x in matrix]
+
+#totalEdges = 17 * 2
+#countedEdges = 0
+
+#def res_temp():
+#    for i in range(len(matrix)):
+#        for j in range(len(matrix[0])):
+#            temp_result[i][j] = 0
+
+#for i in range(len(matrix)):
+#    for j in range(len(matrix[0])):
+#        if matrix[i][j] > 0:
+#            countedEdges += 1
+
+#if countedEdges == totalEdges:
+#    print("Edges Equal")
+#    res_temp()
+    
+#    for m in range(0, 4):
+#        res_temp()
+#        # iterate through rows of X
+#        for i in range(len(matrix)):
+#            # iterate through columns of Y
+#            for j in range(len(crossMatrix[0])):
+#                # iterate through rows of Y
+#                for k in range(len(crossMatrix)):
+#                    temp_result[i][j] += matrix[i][k] * crossMatrix[k][j]
+#        crossMatrix = [x[:] for x in temp_result]
+
+#else:
+#    print("Edges not Equal")
+
+#data = "V\t"
+#for i in range(len(vertices)):
+#    data = data + vertices[i] + '|' + '\t'
+
+#print(data)
+#print()
+
+
+#index = 0
+#for i in range(len(crossMatrix)):
+#    data = vertices[index] + '\t'
+#    for j in range(len(crossMatrix[0])):
+#        data = data + str(crossMatrix[i][j]) + '|' + '\t'
+#    print(data)
+#    print()
+#    index += 1

@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ClusteringCoefficient", "ClusteringCoefficient\ClusteringCoefficient.pyproj", "{949F2687-8E9C-46BC-9D1D-5FF6AA2C9BEE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{949F2687-8E9C-46BC-9D1D-5FF6AA2C9BEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{949F2687-8E9C-46BC-9D1D-5FF6AA2C9BEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66C76F3B-8FCF-4E3E-B49D-81F3C099A6AA}
+	EndGlobalSection
+EndGlobal

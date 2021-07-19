@@ -1,0 +1,14 @@
+a = b, g 
+b = c 
+c = g, d
+d = j 
+e = f 
+f = k 
+h = i
+i = j 
+j = k, m, o 
+k = l 
+m = n
+n = o
+p = q
+q = r

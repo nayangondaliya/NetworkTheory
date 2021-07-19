@@ -1,0 +1,11 @@
+b = a
+c = b, g
+d = c, h
+e = a, i
+f = e
+g = b, e
+h = g, l
+i = j
+j = g
+k = j, h
+l = l

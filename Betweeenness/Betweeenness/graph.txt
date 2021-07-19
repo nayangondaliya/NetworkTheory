@@ -1,0 +1,8 @@
+a = b, e, f
+b = c, f
+c = g, h
+d = h
+e = f, i, j
+f = g, j
+g = h, k, l
+i = j

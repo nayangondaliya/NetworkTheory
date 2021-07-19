@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "HubAndAuthority", "HubAndAuthority\HubAndAuthority.pyproj", "{E94D9A19-CE44-440D-AE26-4E0E524FC1AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E94D9A19-CE44-440D-AE26-4E0E524FC1AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E94D9A19-CE44-440D-AE26-4E0E524FC1AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D0878AB0-DED0-477F-B9FA-95ACA0292888}
+	EndGlobalSection
+EndGlobal
