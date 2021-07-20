@@ -30,45 +30,23 @@ def getAdjacencyMatrix(fileName, vertices, totalVertices):
                 matrix[edge_index][node_index] = int(edge_l[1]) #un-directed graph
     return matrix
 
-#add closed triangles
-def generateClosedTriangles(triangle, closedTriangle):
-
-    if triangle not in closedTriangle:
-        closedTriangle.append(triangle[0] + triangle[1] + triangle[2])
-        closedTriangle.append(triangle[1] + triangle[2] + triangle[0])
-        closedTriangle.append(triangle[2] + triangle[0] + triangle[1])
-        closedTriangle.append(triangle[2] + triangle[1] + triangle[0])
-        closedTriangle.append(triangle[0] + triangle[2] + triangle[1])
-        closedTriangle.append(triangle[1] + triangle[0] + triangle[2])
-
 #find structural balance
 def findWeakStructuralBalance(graph, vertices):
     
     result = True
-
-    closedTriangle = []
     totalVertex = len(graph)
     
     for oEdge in range(totalVertex):
-        for iEdge in range(len(graph[oEdge])):
-            if oEdge == iEdge:
-                continue
-
-            for cEdge in range(len(graph[iEdge])):
-                if cEdge == oEdge or graph[iEdge][cEdge] == -1:
+        for iEdge in range(oEdge + 1, totalVertex):
+            for cEdge in range(iEdge + 1, totalVertex):
+                #SUM MUST BE 3 OR 1 OR 1
+                sum = graph[oEdge][iEdge] + graph[iEdge][cEdge] + graph[oEdge][cEdge]
+                if sum == 3 or sum == 1 or sum == 0:
                     continue
-
-                if graph[iEdge][cEdge] > -1 and graph[cEdge][oEdge] > -1 and graph[oEdge][iEdge] > -1:
-                    generateClosedTriangles(f'{vertices[oEdge]}{vertices[iEdge]}{vertices[cEdge]}', closedTriangle)
-                    
-                    #SUM MUST BE 3 OR 1 OR 1
-                    sum = graph[oEdge][iEdge] + graph[iEdge][cEdge] + graph[oEdge][cEdge]
-                    if sum == 3 or sum == 1 or sum == 0:
-                        continue
-                    else:
-                        result = False
-                        #print(f'Unbalance at : {vertices[oEdge]}{vertices[iEdge]}{vertices[cEdge]}')
-                        return result
+                else:
+                    result = False
+                    #print(f'Unbalance at : {vertices[oEdge]}{vertices[iEdge]}{vertices[cEdge]}')
+                    return result
     return result
 
 vertices = ['a','b','c','d','e','f','g','h','i','j','k','l']
