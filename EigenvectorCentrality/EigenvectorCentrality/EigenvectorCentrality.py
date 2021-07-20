@@ -107,7 +107,7 @@ def getCentrality(graph, totalVertices, index, iteration):
     #for row in transpose:
     #    print(row)
 
-    for ite in range(2):
+    for ite in range(iteration):
         resultVector = multiplyMatrix(transpose, oneVector)
         total = getTotal(resultVector)
         averageVector = getAverageVector(resultVector, total)
