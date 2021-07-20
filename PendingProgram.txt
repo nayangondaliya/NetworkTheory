@@ -12,3 +12,6 @@ Betweenness 2 (0.7)
 
 A4:
 Completed
+
+A5:
+Proof
