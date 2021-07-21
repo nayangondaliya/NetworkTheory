@@ -121,38 +121,105 @@ def roundMatrix(matrix, r):
             matrix[row][col] = round(matrix[row][col], r)
     return matrix
 
+#get pagerank usinng beta
+def calculatePageRankBeta(graph, alpha, beta, vertices, totalVertices):
+
+    #identity matrix
+    identity =  getMatrix(totalVertices, totalVertices, 0)
+    
+    #set 1 diagonally in identity matrix
+    for index, value in enumerate(vertices):
+        identity[index][index] = 1
+
+    #transpose matrix
+    transpose = getTranspose(graph)
+    
+    #get outdegree of all vertices
+    outDegree = getOutDegree(graph, vertices, totalVertices)
+    
+    #get outdegree diagonal
+    diagonal = getDiagonal(totalVertices, totalVertices, outDegree, vertices)
+
+    #inverse matrix
+    diagonal_inv = numpy.linalg.inv(diagonal)
+
+    #multiply transpose with alpha
+    transpose_alpha = multiplyOneVariable(transpose, alpha)
+    
+    #multiply inverse with diagonal
+    transpose_diagonal = multiplyMatrix(transpose_alpha, diagonal_inv)
+
+    #subtract matrix
+    identity_td = subtractMatrix(identity, transpose_diagonal)
+    
+    #multiply transpose with alpha
+    inv_identity_td = numpy.linalg.inv(identity_td)
+
+    #multiply identity and transpose inverse with beta
+    beta_identity = multiplyOneVariable(inv_identity_td, beta)
+
+    #multiply multiplied matrix with one vector
+    oneVector = getMatrix(totalVertices, 1, 1)
+    f_matrix = multiplyMatrix(beta_identity, oneVector)
+
+    print("Decimal Round Up to 4")
+    r_f_matrix = roundMatrix(f_matrix, 4)
+    print(r_f_matrix)
+    
+    print()
+    
+    print("Decimal Round Up to 2")
+    r_t_matrix = roundMatrix(f_matrix, 2)
+    print(r_t_matrix)
+
+#get pagerank using non-beta
+def calculatePageRank(graph, alpha, vertices, totalVertices):
+
+    #transpose matrix
+    transpose = getTranspose(graph)
+    
+    #get outdegree of all vertices
+    outDegree = getOutDegree(graph, vertices, totalVertices)
+    
+    #get outdegree diagonal
+    diagonal = getDiagonal(totalVertices, totalVertices, outDegree, vertices)
+
+    #multiply transpose with alpha
+    mult_transpose = multiplyOneVariable(transpose, alpha)
+
+    #subtract matrix
+    sub_matrix = subtractMatrix(diagonal, mult_transpose)
+
+    #inverse matrix
+    inv_matrix = numpy.linalg.inv(sub_matrix)
+    
+    #multiply inverse with diagonal
+    mult_matrix = multiplyMatrix(diagonal, inv_matrix)
+    
+    #multiply multiplied matrix with one vector
+    oneVector = getMatrix(totalVertices, 1, 1)
+    f_matrix = multiplyMatrix(mult_matrix, oneVector)
+    
+    print("Decimal Round Up to 4")
+    r_f_matrix = roundMatrix(f_matrix, 4)
+    print(r_f_matrix)
+    
+    print()
+    
+    print("Decimal Round Up to 2")
+    r_t_matrix = roundMatrix(f_matrix, 2)
+    print(r_t_matrix)
+
 totalVertices = 12
 vertices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"]
 alpha = 0.6
+beta = 1
 
 graph = generateMatrix("graph.txt", vertices, totalVertices)
-transpose = getTranspose(graph)
-
-outDegree = getOutDegree(graph, vertices, totalVertices)
-diagonal = getDiagonal(totalVertices, totalVertices, outDegree, vertices)
-
-#multiply transpose with alpha
-mult_transpose = multiplyOneVariable(transpose, alpha)
-
-#subtract matrix
-sub_matrix = subtractMatrix(diagonal, mult_transpose)
-
-#inverse matrix
-inv_matrix = numpy.linalg.inv(sub_matrix)
-
-#multiply inverse with diagonal
-mult_matrix = multiplyMatrix(diagonal, inv_matrix)
-
-#multiply multiplied matrix with one vector
-oneVector = getMatrix(totalVertices, 1, 1)
-f_matrix = multiplyMatrix(mult_matrix, oneVector)
-
-print("Decimal Round Up to 4")
-r_f_matrix = roundMatrix(f_matrix, 4)
-print(r_f_matrix)
+print("Pagerank using 1")
+calculatePageRank(graph, alpha, vertices, totalVertices)
 
 print()
 
-print("Decimal Round Up to 2")
-r_t_matrix = roundMatrix(f_matrix, 2)
-print(r_t_matrix)
+print("Pagerank using 2")
+calculatePageRankBeta(graph, alpha, beta, vertices, totalVertices)
