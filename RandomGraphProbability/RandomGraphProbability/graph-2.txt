@@ -1,0 +1,5 @@
+a = b, d
+b = c
+c = f
+d = e
+e = f
